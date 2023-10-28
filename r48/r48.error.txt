@@ -1,0 +1,36 @@
+An error has occurred in R48. This is always the result of a bug somewhere.
+Version: R48 v1.5 (AVC 84), last commit: 81893197c6628363cbc1e753bc10fc956a7fdbc5 refs/remotes/origin/HEAD Date: Fri Sep 29 21:20:39 2023 +0100
+If the rest of R48 disappeared, that means a second error occurred, and R48 has shut down to keep this message up.
+This is because, if backups failed, then Save would fail anyway - and without these instructions, you're kind of doomed.
+A backup data file has been created.
+QUIT AFTER READING THIS MESSAGE IN IT'S ENTIRETY.
+MAKE A COPY OF THE ENTIRE DIRECTORY AND ALL R48 SYSTEM FILES IMMEDIATELY. (anything with .r48 extension is an r48 system file. clip.r48 counts but is probably unnecessary.)
+DO NOT MODIFY OR DESTROY THIS COPY UNLESS YOUR CURRENT WORK IS COMPLETELY SAFE, VALID, NON-CORRUPT AND BACKED UP.
+PREFERABLY FORWARD THE ERROR TEXT FILE (r48.error.txt) TO YOUR DEVELOPMENT GROUP.
+I wrote that in caps since those are the most important instructions for recovering your work.
+Make a copy of r48.error.YOUR_SAVED_DATA.r48 - it contains your data at the time of the error.
+You can import the backup using 'Recover data from R48 error' - but copy the game first, as the data may be corrupt.
+You are encountering an error. Backup as much as you can, backup as often as you can.
+Error details follow:
+java.lang.NullPointerException: Cannot read field "objectId" because "this.map" is null
+	at r48.map.UIMapView.<init>(UIMapView.java:112)
+	at r48.map.UIMapViewContainer.loadMap(UIMapViewContainer.java:149)
+	at r48.toolsets.MapToolset$1.loadMap(MapToolset.java:38)
+	at r48.map.mapinfos.UIGRMMapInfos$7.run(UIGRMMapInfos.java:190)
+	at gabien.ui.UIButton.handleNewPointer(UIButton.java:56)
+	at gabien.ui.UIElement$UIPanel.handleNewPointer(UIElement.java:498)
+	at r48.ui.UITreeView.handleNewPointer(UITreeView.java:143)
+	at gabien.ui.UIElement$UIPanel.handleNewPointer(UIElement.java:498)
+	at gabien.ui.UIElement$UIProxy.handleNewPointer(UIElement.java:615)
+	at gabien.ui.UIElement$UIPanel.handleNewPointer(UIElement.java:498)
+	at gabien.ui.UIWindowView$ElementShell.provideReceiver(UIWindowView.java:404)
+	at gabien.ui.UIWindowView.handleNewPointer(UIWindowView.java:76)
+	at gabien.ui.WindowCreatingUIElementConsumer.runTick(WindowCreatingUIElementConsumer.java:128)
+	at gabienapp.state.LSInApp.tick(LSInApp.java:47)
+	at gabienapp.Launcher.run(Launcher.java:87)
+	at gabienapp.Application.gabienmain(Application.java:21)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at gabien.Main.main(Main.java:72)
